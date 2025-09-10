@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+#define num_meses 12
+char *meses[num_meses] = {
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+};
+
+int dias_no_mes[num_meses] = {
+    31, 28, 31, 30, 31, 30,
+    31, 31, 30, 31, 30, 31
+};
+
+int dias_do_mes_nome(char *nome_mes) {
+    if (nome_mes == NULL) return -1;
+
+    for (int i = 0; i < num_meses; i++) {
+        if (strcmp(meses[i], nome_mes) == 0) {
+            return dias_no_mes[i];
+        }
+    }
+    return -1;
+}
+int main() {
+    char entrada[100];
+
+    printf("Digite um mês: ");
+    if (fgets(entrada, sizeof(entrada), stdin) == NULL) return 1;
+
+    size_t len = strlen(entrada);
+    if (len > 0 && entrada[len - 1] == '\n') entrada[len - 1] = '\0';
+
+    int dias = dias_do_mes_nome(entrada);
+    if (dias == -1) {
+        printf("Mês inválido.\n");
+    } else {
+        printf("O mês %s tem %d dias.\n", entrada, dias);
+    }
+
+    return 0;
+}

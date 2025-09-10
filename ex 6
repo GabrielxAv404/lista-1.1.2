@@ -1,0 +1,31 @@
+# include <stdio.h>
+
+       int  ler(){
+       	int n;
+	printf("\ndigite o numero do trabalho\n");
+	printf("\n1- Engenharia\n");
+	printf("\n2-Edificações\n");
+	printf("\n3- sistemas\n");
+	scanf("%d", &n);
+	}
+        void en(){
+  printf("\no código 1 e Engenharia");
+	}
+       void ed(){
+  printf("\no código 2 e Edificações");
+	}
+   void si(){
+  printf("\no código 3 e sistemas");
+	}
+	int main(){
+	int op;
+	op=ler();
+		
+		switch(op){
+			case 1: en(); break;
+			case 2: ed(); break;
+			case 3: si(); break;
+			default: printf("codigo invalido"); break;
+		}
+		
+	}

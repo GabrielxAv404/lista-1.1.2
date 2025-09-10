@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int n;
+int a = 0, b = 1, gua;
+void fibo(){
+    printf("Digite o numero de meses:");
+    scanf("%d", &n);
+    printf("%d ", a);
+    gua = 0;
+    for(int i = 0; i < n; ++i){
+          gua = a + b;
+          a = b;
+          b = gua;
+          printf("%d", a); 
+          }
+    }
+int main(){
+    fibo();
+    printf("\n(°-°)\n");
+    
+    }
+    

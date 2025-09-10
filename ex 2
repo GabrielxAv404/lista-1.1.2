@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int fatorial(int f){
+	int fato=1;
+	for (int i = 1; i <= f; i++){
+        fato *= i;}
+	return fato;}
+int main (){
+
+	int pessoas, pe, sentados, resposta;
+	printf("de o numero de pessoas: \n");
+	scanf("%d", &pessoas);
+	printf("de o numero de assentos: \n");
+	scanf("%d", &sentados);
+	pe= pessoas- sentados;
+	resposta=fatorial(pessoas)/ (fatorial(sentados)* fatorial(pe))*fatorial(sentados);
+	
+	printf("conbinacoes possiveis %d", resposta);
+	return 0;
+}

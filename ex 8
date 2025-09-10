@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main()
+{
+#define N 19
+float p1[N];
+float p2[N];
+float trab[N];
+float media[N];
+int i;
+ printf("Gestao de notas\n");
+
+for (i = 0; i < N; i++) {
+    printf("\nNota p1 do aluno %d:\n ", i+1);
+    scanf("%f", &p1[i]);
+
+    printf("\nNota p2 do aluno %d:\n ", i+1);
+    scanf("%f", &p2[i]);
+    
+    printf("\nNota trabalho do aluno %d :\n ", i+1);
+    scanf("%f", &trab[i]);
+    
+       media[i] = (p1[i] + p2[i] + trab[i])/3.0;
+    printf ("Média do aluno %d: %f", i+1, media[i]);
+    }
+    // Exibicao dos resultados
+    printf("\n=== RELATORIO COMPLETO ===\n");
+    printf("Aluno\tP1\tP2\tTrabalho\tMedia\tSituacao\n");
+    printf("--------------------------------------------------------\n");
+    for (i = 0; i < N; i++) {
+        printf("%d\t%.1f\t%.1f\t%.1f\t\t%.2f\t",i+1, p1[i], p2[i], trab[i], media[i]); 
+               
+        
+        // Verificacao da situacao  
+        if ( media[i]>= 7.0) {
+            printf("Aprovado\n");
+        } else if ( media[i] >= 5.0) {
+            printf("Recuperacao\n");
+        } else {
+            printf("Reprovado\n");
+        }
+        
+    }
+    
+    return 0;
+}

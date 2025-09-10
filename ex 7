@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <math.h>
+
+double pot(double num) {
+    return num * num * num * num;
+}
+
+double raiz(double num) {
+    return sqrt(num);
+}
+
+int fat(int num) {
+    int fat = 1;
+    for (int i = 1; i <= num; i++) {
+        fat *= i;
+    }
+    return fat;
+}
+
+int main() {
+    int opc;
+    double n;
+
+    while (1) {
+        printf("\nCALCULADORA\n");
+        printf("1 - Potencia de 4\n");
+        printf("2 - Raiz quadrada\n");
+        printf("3 - Fatorial\n");
+        printf("4 - Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opc);
+
+        if (opc == 4) {
+            printf("Saindo\n");
+            break;
+        }
+
+        printf("Digite um numero: ");
+        scanf("%lf", &n);
+
+        switch (opc) {
+            case 1:
+                printf("Resultado: %.2lf\n", pot(n));
+                break;
+
+            case 2:
+                if (n < 0) {
+                    printf("Nao tem raiz quadrada\n");
+                } else {
+                    printf("Resultado: %.2lf\n", raiz(n));
+                }
+                break;
+
+            case 3:
+                if (n < 0 || (int)n != n) {
+                    printf("fatorial nao é inteiro ou positivo\n");
+                } else {
+                    printf("Resultado: %d\n", fat((int)n));
+                }
+                break;
+
+            default:
+                printf("Opcao invalida. \n");
+        }
+    }
+
+    return 0;
+}
