@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+
+int fatorial(int n) {
+    int fat = 1;
+    for(int i = 1; i <= n; i++) {
+        fat *= i;
+    }
+    return fat;
+}
+
+int main() {
+    int soma = 0;
+    int produto = 1;
+    int encontrou = 0;
+
+    
+    for(int x = 0; x <= 10; x++) {
+        int a = fatorial(x + 1);
+        int b = fatorial(x) + 6 * x;
+
+        if(a == b) {
+            printf("Raiz encontrada: x = %d\n", x);
+            soma += x;
+            produto *= x;
+            encontrou = 1;
+        }
+    }
+
+    if(encontrou) {
+        printf("Soma das raízes: %d\n", soma);
+        printf("Produto das raízes: %d\n", produto);
+    } else {
+        printf("Nenhuma raiz encontrada no intervalo testado.\n");
+    }
+
+    return 0;
+}
